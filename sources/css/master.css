@@ -133,6 +133,12 @@ input[type=submit] {
 .pl20 {
 	padding-left: 20px;
 }
+.pl30 {
+	padding-left: 30px;
+}
+.pl50 {
+	padding-left: 50px;
+}
 /* margin */
 .mt5 {
 	margin-top: 5px;
@@ -156,8 +162,14 @@ input[type=submit] {
 .fs16 {
 	font-size: 16px;
 }
+.fs18 {
+	font-size: 18px;
+}
 .fs20 {
 	font-size: 20px;
+}
+.fs30 {
+	font-size: 30px;
 }
 .fwb {
 	font-weight: bold;
@@ -172,6 +184,9 @@ input[type=submit] {
 .color-646464 {
 	color: #646464;
 }
+.color-ffffff {
+	color: #ffffff;
+}
 /* background color */
 .bkff {
 	background: #ffffff;
@@ -179,8 +194,8 @@ input[type=submit] {
 .bkdc0000 {
 	background: #dc0000;
 }
-.bk8d080d {
-	background: #8d080d;
+.bk880c0c {
+	background: #880c0c;
 }
 .bke5e5e5 {
 	background: #e5e5e5;
@@ -333,6 +348,20 @@ input[type=submit] {
 .pjzs-cont table td {
 	border: #acacac 2px solid;
 	line-height: 30px;
+	background: #ffffff;
 	font-size: 14px;
-	text-align: center;
 }
+.xbynl-top {
+	height: 50px;
+	padding-top: 5px;
+}
+.xbynl-top .lf {
+	margin-left: 18px;
+	height: 45px;
+}
+.xbynl-top .rt {
+	width: 400px;
+	padding-right: 5px;
+	line-height: 22px;
+}
+
