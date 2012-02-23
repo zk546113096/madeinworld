@@ -7,291 +7,770 @@
     <link rel="stylesheet" href="./sources/css/master.css" type="text/css" media="screen" charset="utf-8">
     <script type="text/javascript" src="./sources/js/jquery/jquery-1.7.js"></script>
     <script type="text/javascript" src="./sources/js/common.js"></script>
+    <script type="text/javascript" src="./sources/js/index.js"></script>
   </head>
-  <body class="bkff">
-    <!-- 友情链接模块 {{{ -->
-    <div class="new-links">
-      <!-- switch tab {{{ -->
-      <ul class="switch-tabs new-links-tabs">
-        <li class="lf current">
-          合作伙伴
-          <span>|</span>
-        </li> 
-        <li class="lf">
-          集团旗下
-          <span>|</span>
-        </li> 
-        <li class="lf">
-          联盟伙伴 
-          <span>|</span>
-        </li> 
-        <li class="lf">
-          行业链接
-        </li> 
-      </ul>
-      <!-- }}} -->
-      <ul class="switch-blocks new-links-blocks">
-        <!-- 合作伙伴 {{{ -->
-        <li class="current">
-          <dl class="clearfix">
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/zghg-img.png" alt="中国海关网" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  进口服务及中央仓储 
+  <body>
+    <div class="wrapper">
+      <div class="page">
+        <!-- 头部 {{{ -->
+        <div id="header">
+          <!-- top menu {{{ -->
+          <div class="topmenu clearfix">
+            <div class="lf">
+              <label for="" class="lf fwb color-646464">原瓶进口查询：</label>
+              <form class="lf clearfix bd1s969696" action="index_submit" method="get" accept-charset="utf-8">
+                <input class="lf topmenu-num-text" type="text" value="请输入商品条形码" />
+                <input class="rt topmenu-num-btn" value="" type="submit" title="点击查询" />
+              </form>
+            </div>
+            <ul class="rt ml10">  
+              <li class="lf"><a href="http://www.madeinworld.cn/customer/account" rel="nofollow">我的账户</a></li>
+              <li class="lf topmenu-weibo"><a href="http://weibo.com/madeinworld" target="_blank">关注微博</a></li> 
+              <li class="lf"><a href="#">美德博客</a></li>
+              <li class="lf"><a href="#" onclick="open_pic_chat()">在线客服</a></li>
+            </ul>
+            <div class="rt">
+              您好，欢迎光临美德因我！[
+              <a href="http://www.madeinworld.cn/customer/account/login" rel="nofollow" class="fwb color-880b0b">登录</a> | 
+              <a href="http://www.madeinworld.cn/customer/account/create" rel="nofollow" class="fwb color-880b0b">注册</a>]
+              <span class="ml10">
+                [<a href="#" class="fwb color-880b0b">会员卡专用通道</a>]
+              </span>
+            </div>
+          </div>
+          <!-- }}} -->
+          <!-- header comtainer {{{ -->
+          <div class="header-container">
+            <div class="header">
+              <h1 class="logo">
+                <strong>美德因我</strong>
+                <a class="logo" title="美德因我" href="http://www.madeinworld.cn/">
+                  <img alt="美德因我" src="./sources/images/logo.jpg">
                 </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/sap-img.png" alt="SAP" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  ERP及供应链管理<br />服务
+              </h1>  
+              <div class="search">
+                <div class="search_form">
+                  <form method="get" action="http://www.madeinworld.cn/catalogsearch/result/" id="search_mini_form">        
+                    <div class="form-search">                     
+                      <input type="text" class="input-text search-key-text" value="性价比商品" name="q" id="search">              
+                      <button class="button" title="关键字搜索定向" type="submit">       
+                        <span>        
+                          <span>          
+                            关键字搜索定向        
+                          </span>      
+                        </span>    
+                      </button>             
+                      <div class="search-autocomplete" id="search_autocomplete">    
+                      </div> 
+                    </div>
+                  </form>
+                </div>
+                <div class="search_words">
+                  <ul class="tags-list">
+                    <li class="hotsearchbt">热门搜索:</li>
+                    <li><a href="http://www.madeinworld.cn/catalogsearch/result/?q=%E5%A4%9A%E4%B9%90">多乐</a></li>
+                    <li><a href="http://www.madeinworld.cn/catalogsearch/result/?q=%E9%9C%B2%E5%A8%9C%E5%B0%BC%E5%8D%A1">露娜尼卡</a></li>
+                    <li><a href="http://www.madeinworld.cn/catalogsearch/result/?q=%E7%A4%BC%E7%9B%92">礼盒</a></li>
+                    <li><a href="http://www.madeinworld.cn/catalogsearch/result/?q=%E6%A9%84%E6%A6%84%E6%B2%B9">橄榄油</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- }}} -->
+        <!-- topmenu cart {{{ -->
+        <div class="topmenu_cart">
+          <div id="minicart" class="topcart">
+            <p class="yourcart">
+              <a href="http://www.madeinworld.cn/checkout/cart/" class="gouwuche">
+                <span>购物车 <span>
+                0 </span>件 </span>
+              </a> | <span class="price">￥0.00</span> 元
+            </p>
+            <div class="block block-cart">
+              <div style="display: none;" id="minicartContent" class="block-content">
+                <p class="empty">
+                  您的购物车中没有商品。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="nav-container">
+            <ul id="nav">
+              <li style="background: none repeat scroll 0% 0% #ffffff;" class="level0 nav-0 level-top active">
+                <a href="http://www.madeinworld.cn/" class="level-top active"><span>主页</span></a>
+              </li>
+              <li class="level0 nav-1 level-top">
+                <a href="http://www.madeinworld.cn/xuanjiu.html" class="level-top"><span>选酒中心</span></a>
+                <div class="widget widget-static-block" style="display: none;">
+                  <div class="xjzx">
+                    <div class="xjzx_left">
+                      <ul>
+                        <p>
+                          酒种分类
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/238-1.html">红葡萄酒</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/239-1.html">白葡萄酒</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/13-1.html">起泡酒</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/89-1.html">桃红葡萄酒</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/12-1.html">加度葡萄酒</a></li>
+                      </ul>
+                      <ul>
+                        <p>
+                          原产国家
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/108-1.html">西班牙</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/111-1.html">法国</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/107-1.html">意大利</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/105-1.html">澳大利亚</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/237-1.html">葡萄牙</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/109-1.html">美国</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/110-1.html">德国</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/104-1.html">智利</a></li>
+                      </ul>
+                      <ul>
+                        <p>
+                          适合场合
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/286-1.html">自饮用</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/287-1.html">聚会用</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/288-1.html">商务用</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/289-1.html">婚宴用</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/290-1.html">送礼用</a></li>
+                      </ul>
+                      <ul>
+                        <p>
+                          价格区间
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/29-1.html">70以下</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/30-1.html">71-150</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/31-1.html">151-250</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/32-1.html">251-500</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/33-1.html">500以上</a></li>
+                      </ul>
+                    </div>
+                    <div class="xjzx_right">
+                      <a href="http://www.madeinworld.cn/1019602.html"><img alt="" src="http://www.madeinworld.cn/media/30KB.jpg"></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="level0 nav-2 level-top"><a href="http://www.madeinworld.cn/cuxiao.html" class="level-top"><span>促销中心</span></a>
+                <div class="widget widget-static-block" style="display: none;">
+                  <div class="cxzq">
+                    <div class="cxzq_left">
+                      <a href="http://www.madeinworld.cn/1013007.html"><img alt="" src="http://www.madeinworld.cn/media//cxzq_l_pic.jpg"></a>
+                    </div>
+                    <div class="cxzq_right">
+                      <a href="http://www.madeinworld.cn/1011097.html"><img alt="" src="http://www.madeinworld.cn/media//cxzq_r_pic.jpg"></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="level0 nav-3 level-top"><a href="http://www.madeinworld.cn/lijiu.html" class="level-top"><span>场合礼酒</span></a>
+                <div class="widget widget-static-block" style="display: none;">
+                  <div class="chlj">
+                    <div class="chlj_left">
+                      <ul>
+                        <p>
+                          适合人群
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/291-1.html">适合女性</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/294-1.html">适合老人</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/293-1.html">适合新手</a></li>
+                      </ul>
+                      <ul>
+                        <p>
+                          适合场合
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/287-1.html">适合聚会</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/288-1.html">适合商务</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/289-1.html">适合婚宴</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/286-1.html">适合自饮</a></li>
+                        <li><a href="http://www.madeinworld.cn/xuanjiu/290-1.html">适合送礼</a></li>
+                      </ul>
+                      <ul>
+                        <p>
+                          礼盒选购
+                        </p>
+                        <li><a href="http://www.madeinworld.cn/catalogsearch/result/?q=%E6%9C%A8%E7%9B%92">木 盒</a></li>
+                        <li><a href="http://www.madeinworld.cn/catalogsearch/result/?q=%E7%9A%AE%E7%9B%92">皮 盒</a></li>
+                      </ul>
+                    </div>
+                    <div class="chlj_right">
+                      <a href="http://www.madeinworld.cn/1031088.html"><img alt="" src="http://www.madeinworld.cn/media//chlj_img.jpg"></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="level0 nav-4 level-top">
+                <a href="http://www.madeinworld.cn/yangsheng.html" class="level-top">
+                  <span>美容养生</span>
                 </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/axa-img.png" alt="AXA" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  商品及物流保险<br />服务
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/hsbc-img.png" alt="HSBC" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  商品及合同信用<br />担保
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/lacaixa-img.png" alt="la Caixa" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  商品及合同信用<br />担保
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/zgyh-img.png" alt="中国银行" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  资金融通支持<br />及业务核算
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/cegid-img.png" alt="cegid" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  线下零售门店系统<br />服务
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/cisco-img.png" alt="CISCO" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  零距离视频会议及<br />网络安全支持
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/colt-img.png" alt="colt" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  全球服务器集群及<br />安全服务
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/sage-img.png" alt="sage" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  客户关系管理系统<br />服务
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/t-img.png" alt="T" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  法律顾问
-                </a>
-               </p>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-               <img src="./sources/images/index/gs-img.png" alt="GS1" />
-               </a>
-               <p>
-                <a href="#" title="">
-                  商品原产地查询<br />服务
-                </a>
-               </p>
-            </dd> 
-          </dl> 
-        </li> 
+              </li>
+              <li class="level0 nav-5 level-top"><a href="http://www.madeinworld.cn/zixun.html" class="level-top"><span>资讯中心</span></a></li>
+              <li class="level0 nav-6 level-top last">
+                <a href="http://www.madeinworld.cn/pinpai.html" class="level-top"><span>品牌中心</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <!-- }}} -->
-        <!-- 集团旗下 {{{ -->
-        <li class="new-links-two">
-          <dl class="clearfix">
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-01.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-02.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-03.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-04.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-05.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-06.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-07.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/loggoss-08.png" alt="" />
-              </a>
-            </dd> 
-          </dl>
-        </li>
+        </div>
         <!-- }}} -->
-        <!-- 联盟伙伴 {{{ -->
-        <li class="new-links-two new-links-three">
-          <dl class="clearfix">
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-01.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-02.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-03.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-04.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-05.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-06.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-07.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/partner-08.png" alt="" />
-              </a>
-            </dd> 
-          </dl>
-        </li>
+        <!-- 内容 {{{ -->
+        <div id="content">
+          <div class="main-container col1-layout">
+            <div class="main">
+              <div class="col-main">
+                <div class="std">
+                  <div class="layout">
+                    <div class="cols_l">
+                      <div class="w848">
+                        <div class="widget widget-static-block">
+                          <p>
+                            <!--以上为调用范例 -->
+                            <script type="text/javascript">// &lt;![CDATA[
+                              jQuery(document).ready(function(){
+                                  jQuery('#flashbox2').smallslider();
+                              });
+                              // ]]&gt;
+                            </script>
+                          </p>
+                          <div class="smallslider" id="flashbox2">
+                            <ul style="position: relative;">
+                              <li style="position: absolute; z-index: 1; opacity: 1; display: list-item;" class="current-li">
+                                <a href="#" title="">
+                                  <img src="./sources/images/index/slider-1.png" alt="" />
+                                </a>
+                              </li>
+                              <li style="position: absolute; z-index: 3; opacity: 1; display: none;" class="">
+                                <a href="http://www.madeinworld.cn/catalogsearch/result/?occasion=0&amp;price_range=0&amp;q=%E6%A9%84%E6%A6%84%E6%B2%B9">
+                                  <img alt="橄榄油" src="http://www.madeinworld.cn/media/catalog/product/tab/default/2.jpg">
+                                </a>
+                              </li>
+                              <li style="position: absolute; z-index: 1; opacity: 1; display: none;" class="">
+                                <a href="http://www.madeinworld.cn/xuanjiu.html">
+                                  <img alt="情迷里奥哈" src="http://www.madeinworld.cn/media/catalog/product/tab/default/3.jpg">
+                                </a>
+                              </li>
+                              <li style="position: absolute; z-index: 1; opacity: 1; display: none;" class="">
+                                <a href="">
+                                  <img alt="红酒情人" src="http://www.madeinworld.cn/media/catalog/product/tab/default/_2_.jpg">
+                                </a>
+                              </li>
+                            </ul>
+                            <div class="smallslider-btns">
+                              <span class="current-btn"></span>
+                              <span style="margin-left: 4px;" class=""></span>
+                              <span style="margin-left: 4px;" class=""></span>
+                              <span style="margin-left: 4px;" class=""></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="widget widget-static-block">
+                          <div class="piclist">
+                            <ul>
+                              <li class="one"><a href="http://www.madeinworld.cn/lihezhuanti.html"><img alt="进口红酒礼盒" src="http://www.madeinworld.cn/media//lihe_ad.jpg"></a></li>
+                              <li class="two"><a href="http://www.madeinworld.cn/11010088.html"><img alt="赛林娜庄园赤霞珠" src="http://www.madeinworld.cn/media//963.jpg"></a></li>
+                              <li class="three"><a href="http://www.madeinworld.cn/1019607.html"><img alt="多乐进口干红葡萄酒六瓶组合" src="http://www.madeinworld.cn/media//pic3_1.gif"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cols_r">
+                      <div class="widget widget-static-block">
+                        <script type="text/javascript">// &lt;![CDATA[
+          //&lt;!CDATA[
+          function g(o){return document.getElementById(o);}
+          function HoverLi(n){
+          //如果有N个标签,就将i&lt;=N;
+          //本功能非常OK,兼容IE7,FF,IE6
+            for(var i=1;i&lt;=2;i++)
+            {
+              g('tb_'+i).className='tm2';
+              g('tbc_0'+i).style.display='none';
+            }
+            g('tbc_0'+n).style.display='block';
+            g('tb_'+n).className='tm1';
+          }
+          // ]]&gt;</script>
+                        <div class="r_tab">
+                          <div class="r_tab_title">
+                            <ul>
+                              <li onmouseover="x:HoverLi(1);" class="tm2" id="tb_1">热门促销</li>
+                              <li onmouseover="x:HoverLi(2);" class="tm1" id="tb_2">网站公告</li>
+                            </ul>
+                          </div>
+                          <div class="r_tab_list">
+                            <div style="display: none;" id="tbc_01">
+                              <a href="http://www.madeinworld.cn/1011007.html"><img alt="西班牙DO露娜尼卡干红葡萄酒" src="http://www.madeinworld.cn/media//rexiao.jpg"></a>
+                            </div>
+                            <div style="display: block;" id="tbc_02">
+                              <div class="notice">
+                                <div class="notice_title">
+                                  <span><a href="http://www.madeinworld.cn/news/cat/news/"><img alt="" src="http://www.madeinworld.cn/skin/frontend/default/blank/images/more.gif"></a></span>
+                                  <h2><a href="http://www.madeinworld.cn/news/cat/news/"><img alt="" src="http://www.madeinworld.cn/skin/frontend/default/blank/images/notice_title.gif"></a></h2>
+                                </div>
+                                <ul class="notice_list">
+                                  <li class="item_0"><a href="http://www.madeinworld.cn/news/wangzhan-fahuo/"> 2012年2月1日起商城将正常发货！ </a></li>
+                                  <li class="item_1"><a href="http://www.madeinworld.cn/news/wangzhan-shangxian/"> 美德因我商城正式上线啦！ </a></li>
+                                  <li class="item_2"><a href="http://www.madeinworld.cn/news/hongjiu-tiepai/"> 乐歌联合多国厂商推出OEM红酒贴牌服务 </a></li>
+                                  <li class="item_3"><a href="http://www.madeinworld.cn/news/cangchu-ruhuo/"> 美德因我仓储已入货 </a></li>
+                                  <li class="item_4"><a href="http://www.madeinworld.cn/news/xibanya-hongjiu/"> 西班牙三个柜红酒发出，开始中国前期贸易市 </a></li>
+                                </ul>
+                                <script type="text/javascript">  
+          jQuery(document).ready(function(){
+          jQuery(".notice_list li").addClass(function() {
+            return 'item_' + jQuery(this).index();
+          });
+          })
+                                </script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="widget widget-static-block">
+                        <div class="free_shipping">
+                          <img alt="全场包邮" src="http://www.madeinworld.cn/media//125802.jpg">
+                        </div>
+                      </div>
+                      <div class="widget widget-static-block">
+                        <div class="fl">
+                          <img alt="" src="http://www.madeinworld.cn/media//pic4.gif">
+                        </div>
+                      </div>
+                      <div class="widget widget-static-block">
+                        <script type="text/javascript">// &lt;![CDATA[
+          jQuery(function(){
+            jQuery("#TabContainerGTIN_TabPanelGTIN_txtRequestGTIN").click(function(){
+              jQuery(this).removeAttr('value');
+            });
+            jQuery("#TabContainerGTIN_TabPanelGTIN_txtRequestGTIN").blur(function(){
+              jQuery(this).attr('value','请输入条形码')
+            });
+          });
+          // ]]&gt;</script>
+                        <form target="_blank" method="post" enctype="application/x-www-form-urlencoded" action="http://gepir.gs1.org/v32/xx/gtin.aspx?Lang=en-US" id="GtinClient">
+                          <div class="yz_search">
+                            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET"><span>原装进口查询：</span>
+                            <div class="yzjkcx">
+                              <input type="text" value="请输入条形码" name="TabContainerGTIN:TabPanelGTIN:txtRequestGTIN" maxlength="14" style="font-size: 12px;" id="TabContainerGTIN_TabPanelGTIN_txtRequestGTIN"><input type="hidden" value="item" name="TabContainerGTIN:TabPanelGTIN:rblGTIN" id="TabContainerGTIN_TabPanelGTIN_rblGTIN_1"><button onclick="GtinClient.submit(); " class="cx_btn" id="TabContainerGTIN_TabPanelGTIN_btnSubmitGTIN"></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hongjiu">
+                    <h1><span>新品上市</span></h1>
+                    <div class="hj_content">
+                      <div class="widget widget-static-block">
+                        <div class="title">
+                          <a href="#">新品</a>
+                        </div>
+                        <div class="sale">
+                          <a href="1011001.html"><img alt="西班牙皇家菲度干红葡萄酒 进口红酒" src="http://www.madeinworld.cn/media//sale_wine_1_1__1.jpg"></a>
+                        </div>
+                        <div class="hongjiu_list">
+                          <div class="homelist">
+                            <ul class="products-grid first odd">
+                              <li class="item first">
+                              <a class="product-image" title="西班牙DO皇家卡耶 " href="http://www.madeinworld.cn/1011003.html"><img alt="西班牙DO皇家卡耶 " original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8436043580674-2_2.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8436043580674-2_2.png"></a>
+                              <span class="product-name"><a title="西班牙DO皇家卡耶 " href="http://www.madeinworld.cn/1011003.html">西班牙DO皇家卡耶 </a></span>
+                              <div class="price-box">
+                                <!--Alex -->
+                                <span class="price-label">仅 售：</span>
+                                <span id="product-price-200" class="regular-price">
+                                <span class="price">￥89.00</span>&nbsp;元 </span>
+                              </div>
+                              </li>
+                              <li class="item">
+                              <a class="product-image" title="西班牙DO阿扎达进口红酒" href="http://www.madeinworld.cn/1011002.html"><img alt="西班牙DO阿扎达进口红酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8411789012160-2_1.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8411789012160-2_1.png"></a>
+                              <span class="product-name"><a title="西班牙DO阿扎达进口红酒" href="http://www.madeinworld.cn/1011002.html">西班牙DO阿扎达进口红酒</a></span>
+                              <div class="price-box">
+                                <p class="old-price">
+                                  <span class="price-label">仅 售：</span>
+                                  <span id="old-price-508" class="price">
+                                  ￥89.00 </span>
+                                </p>
+                                <p class="special-price">
+                                  <span class="price-label">特惠价：</span>
+                                  <span id="product-price-508" class="price">
+                                  ￥69.00 </span>
+                                </p>
+                              </div>
+                              </li>
+                              <li class="item">
+                              <a class="product-image" title="西班牙DOC多乐进口干红葡萄酒" href="http://www.madeinworld.cn/1011004.html"><img alt="西班牙DOC多乐进口干红葡萄酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8436043581442-2_2.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8436043581442-2_2.png"></a>
+                              <span class="product-name"><a title="西班牙DOC多乐进口干红葡萄酒" href="http://www.madeinworld.cn/1011004.html">西班牙DOC多乐进口干红</a></span>
+                              <div class="price-box">
+                                <!--Alex -->
+                                <span class="price-label">仅 售：</span>
+                                <span id="product-price-509" class="regular-price">
+                                <span class="price">￥89.00</span>&nbsp;元 </span>
+                              </div>
+                              </li>
+                              <li class="item last">
+                              <a class="product-image" title="西班牙DO露娜尼卡干红葡萄酒" href="http://www.madeinworld.cn/1011007.html"><img alt="西班牙DO露娜尼卡干红葡萄酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8437006111553-2_1_1.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8437006111553-2_1_1.png"></a>
+                              <span class="product-name"><a title="西班牙DO露娜尼卡干红葡萄酒" href="http://www.madeinworld.cn/1011007.html">西班牙DO露娜尼卡干红葡</a></span>
+                              <div class="price-box">
+                                <p class="old-price">
+                                  <span class="price-label">仅 售：</span>
+                                  <span id="old-price-512" class="price">
+                                  ￥89.00 </span>
+                                </p>
+                                <p class="special-price">
+                                  <span class="price-label">特惠价：</span>
+                                  <span id="product-price-512" class="price">
+                                  ￥69.00 </span>
+                                </p>
+                              </div>
+                              </li>
+                            </ul>
+                            <ul class="products-grid last even">
+                              <li class="item first">
+                              <a class="product-image" title="西班牙DO威莱达干红葡萄酒" href="http://www.madeinworld.cn/1011006.html"><img alt="西班牙DO威莱达干红葡萄酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8411789013105-2.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8411789013105-2.png"></a>
+                              <span class="product-name"><a title="西班牙DO威莱达干红葡萄酒" href="http://www.madeinworld.cn/1011006.html">西班牙DO威莱达干红葡萄</a></span>
+                              <div class="price-box">
+                                <!--Alex -->
+                                <span class="price-label">仅 售：</span>
+                                <span id="product-price-511" class="regular-price">
+                                <span class="price">￥109.00</span>&nbsp;元 </span>
+                              </div>
+                              </li>
+                              <li class="item">
+                              <a class="product-image" title="西班牙DOC阿麦吉尔干红葡萄酒" href="http://www.madeinworld.cn/1011107.html"><img alt="西班牙DOC阿麦吉尔干红葡萄酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8437005128408-2.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8437005128408-2.png"></a>
+                              <span class="product-name"><a title="西班牙DOC阿麦吉尔干红葡萄酒" href="http://www.madeinworld.cn/1011107.html">西班牙DOC阿麦吉尔干红</a></span>
+                              <div class="price-box">
+                                <!--Alex -->
+                                <span class="price-label">仅 售：</span>
+                                <span id="product-price-521" class="regular-price">
+                                <span class="price">￥126.00</span>&nbsp;元 </span>
+                              </div>
+                              </li>
+                              <li class="item">
+                              <a class="product-image" title="西班牙DO塞隆进口干红葡萄酒" href="http://www.madeinworld.cn/1011008.html"><img alt="西班牙DO塞隆进口干红葡萄酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8420209007655-2.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8420209007655-2.png"></a>
+                              <span class="product-name"><a title="西班牙DO塞隆进口干红葡萄酒" href="http://www.madeinworld.cn/1011008.html">西班牙DO塞隆进口干红葡</a></span>
+                              <div class="price-box">
+                                <!--Alex -->
+                                <span class="price-label">仅 售：</span>
+                                <span id="product-price-513" class="regular-price">
+                                <span class="price">￥96.00</span>&nbsp;元 </span>
+                              </div>
+                              </li>
+                              <li class="item last">
+                              <a class="product-image" title="西班牙DOC贝尔多斯皇宫干红葡萄酒" href="http://www.madeinworld.cn/1011108.html"><img alt="西班牙DOC贝尔多斯皇宫干红葡萄酒" original="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8420209007594-2.png" src="http://www.madeinworld.cn/media/catalog/product/cache/1/homepng/70x208/9df78eab33525d08d6e5fb8d27136e95/8/4/8420209007594-2.png"></a>
+                              <span class="product-name"><a title="西班牙DOC贝尔多斯皇宫干红葡萄酒" href="http://www.madeinworld.cn/1011108.html">西班牙DOC贝尔多斯皇宫</a></span>
+                              <div class="price-box">
+                                <!--Alex -->
+                                <span class="price-label">仅 售：</span>
+                                <span id="product-price-522" class="regular-price">
+                                <span class="price">￥118.00</span>&nbsp;元 </span>
+                              </div>
+                              </li>
+                            </ul>
+                            <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 友情链接模块 {{{ -->
+          <div class="new-links">
+            <!-- switch tab {{{ -->
+            <ul class="switch-tabs new-links-tabs">
+              <li class="lf current">
+                合作伙伴
+                <span>|</span>
+              </li> 
+              <li class="lf">
+                集团旗下
+                <span>|</span>
+              </li> 
+              <li class="lf">
+                联盟伙伴 
+                <span>|</span>
+              </li> 
+              <li class="lf">
+                行业链接
+              </li> 
+            </ul>
+            <!-- }}} -->
+            <ul class="switch-blocks new-links-blocks">
+              <!-- 合作伙伴 {{{ -->
+              <li class="current">
+                <dl class="clearfix">
+                  <dd class="lf tac">
+                    <a href="#" title="中国海关">
+                     <img src="./sources/images/index/zghg-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        进口服务及中央仓储 
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="SAP">
+                     <img src="./sources/images/index/sap-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        ERP及供应链管理<br />服务
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="AXA">
+                     <img src="./sources/images/index/axa-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        商品及物流保险<br />服务
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="HSBC">
+                     <img src="./sources/images/index/hsbc-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        商品及合同信用<br />担保
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="la Caixa">
+                     <img src="./sources/images/index/lacaixa-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        商品及合同信用<br />担保
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="中国银行">
+                     <img src="./sources/images/index/zgyh-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        资金融通支持<br />及业务核算
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="Cegid">
+                     <img src="./sources/images/index/cegid-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        线下零售门店系统<br />服务
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="CISCO">
+                     <img src="./sources/images/index/cisco-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        零距离视频会议及<br />网络安全支持
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="colt">
+                     <img src="./sources/images/index/colt-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        全球服务器集群及<br />安全服务
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="sage">
+                     <img src="./sources/images/index/sage-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        客户关系管理系统<br />服务
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="T 法律顾问">
+                     <img src="./sources/images/index/t-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        法律顾问
+                      </a>
+                     </p>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="GS1">
+                     <img src="./sources/images/index/gs-img.png" alt="" />
+                     </a>
+                     <p>
+                      <a href="#" title="">
+                        商品原产地查询<br />服务
+                      </a>
+                     </p>
+                  </dd> 
+                </dl> 
+              </li> 
+              <!-- }}} -->
+              <!-- 集团旗下 {{{ -->
+              <li class="new-links-two">
+                <dl class="clearfix">
+                  <dd class="lf tac">
+                    <a href="#" title="in The world">
+                      <img src="./sources/images/index/loggoss-01.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="乐歌西班牙">
+                      <img src="./sources/images/index/loggoss-02.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="乐歌中国">
+                      <img src="./sources/images/index/loggoss-03.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="乐颂红酒网">
+                      <img src="./sources/images/index/loggoss-04.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="祈年贸易">
+                      <img src="./sources/images/index/loggoss-05.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="LVKES">
+                      <img src="./sources/images/index/loggoss-06.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="正信商务">
+                      <img src="./sources/images/index/loggoss-07.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="凡想科技">
+                      <img src="./sources/images/index/loggoss-08.png" alt="" />
+                    </a>
+                  </dd> 
+                </dl>
+              </li>
+              <!-- }}} -->
+              <!-- 联盟伙伴 {{{ -->
+              <li class="new-links-two new-links-three">
+                <dl class="clearfix">
+                  <dd class="lf tac">
+                    <a href="http://www.xlys1904.com" title="中国西冷网">
+                      <img src="./sources/images/index/partner-01.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="#" title="宁波电商协会">
+                      <img src="./sources/images/index/partner-02.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.cebbank.com" title="中国广大银行">
+                      <img src="./sources/images/index/partner-03.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.yangchenghuxie.com" title="阳澄湖蟹王">
+                      <img src="./sources/images/index/partner-04.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.zhifubao.com" title="支付宝">
+                      <img src="./sources/images/index/partner-05.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.tenpay.com" title="财付通">
+                      <img src="./sources/images/index/partner-06.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.loggoss.es" title="LOGGOSS西班牙">
+                      <img src="./sources/images/index/partner-07.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.baifendian.com" title="百分点科技">
+                      <img src="./sources/images/index/partner-08.png" alt="" />
+                    </a>
+                  </dd> 
+                </dl>
+              </li>
+              <!-- }}} -->
+              <!-- 行业链接 {{{ -->
+              <li class="new-links-two new-links-four">
+                <dl class="clearfix">
+                  <dd class="lf tac">
+                    <a href="http://www.paidai.com" title="派代">
+                      <img src="./sources/images/index/industry-01.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.19lou.com" title="19楼">
+                      <img src="./sources/images/index/industry-02.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.sina.com" title="新浪网">
+                      <img src="./sources/images/index/industry-03.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.ifeng.com" title="凤凰网">
+                      <img src="./sources/images/index/industry-04.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.youku.com" title="优酷">
+                      <img src="./sources/images/index/industry-05.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.qq.com" title="腾讯网">
+                      <img src="./sources/images/index/industry-06.png" alt="" />
+                    </a>
+                  </dd> 
+                  <dd class="lf tac">
+                    <a href="http://www.iresearch.cn/" title="艾瑞网">
+                      <img src="./sources/images/index/industry-07.png" alt="" />
+                    </a> </dd> 
+                </dl>
+              </li>
+              <!-- }}} -->
+            </ul>
+          </div>
+          <!-- }}} -->
+        </div>
         <!-- }}} -->
-        <!-- 行业链接 {{{ -->
-        <li class="new-links-two new-links-four">
-          <dl class="clearfix">
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-01.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-02.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-03.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-04.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-05.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-06.png" alt="" />
-              </a>
-            </dd> 
-            <dd class="lf tac">
-              <a href="#" title="">
-                <img src="./sources/images/index/industry-07.png" alt="" />
-              </a>
-            </dd> 
-          </dl>
-        </li>
+        <!-- 尾部 {{{ -->
+          <div id="footer"></div> 
         <!-- }}} -->
-      </ul>
+      </div>
     </div>
-    <!-- }}} -->
   </body>
 </html>

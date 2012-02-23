@@ -57,7 +57,6 @@ textarea {
 /* base style {{{ */
 body {
 	font: 12px/1.5 Arial, Helvetica, sans-serif;
-	font-family: 'Microsoft YaHei';
 	padding-bottom: 50px;
 	text-align: left;
 }
@@ -79,11 +78,11 @@ input[type=submit] {
      height: 0;
 }
 .clearfix { display: inline-block; }
-/* }}} */
 /* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+/* }}} */
 /* css class {{{ */
 .clear { clear: both; height: 0px; font-size:0px; overflow: hidden; }
 /* float */
@@ -149,6 +148,9 @@ input[type=submit] {
 .mt10 {
 	margin-top: 10px;
 }
+.ml10 {
+	margin-left: 10px;
+}
 .mb5 {
 	margin-bottom: 5px;
 }
@@ -187,6 +189,9 @@ input[type=submit] {
 .color-ffffff {
 	color: #ffffff;
 }
+.color-880b0b {
+	color: #880b0b;
+}
 /* background color */
 .bkff {
 	background: #ffffff;
@@ -213,6 +218,10 @@ input[type=submit] {
 /* height */
 .h30 {
 	height: 30px;
+}
+/* border style */
+.bd1s969696 {
+  border: #969696 1px solid;
 }
 /* }}} */
 /* view style {{{ */
@@ -368,7 +377,6 @@ input[type=submit] {
 /* }}} */
 /* index css {{{ */
 .new-links {
-  width: 990px;
   margin: 0 auto;
   border: #c8c8c8 1px solid;
   border-top: none;
