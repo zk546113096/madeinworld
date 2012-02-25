@@ -57,7 +57,6 @@ textarea {
 /* base style {{{ */
 body {
 	font: 12px/1.5 Arial, Helvetica, sans-serif;
-	padding-bottom: 50px;
 	text-align: left;
 }
 a:link, a:visited, a:active {
@@ -126,6 +125,9 @@ input[type=submit] {
 .pt15 {
 	padding-top: 15px;
 }
+.pt30 {
+	padding-top: 30px;
+}
 .pb15 {
 	padding-bottom: 15px;
 }
@@ -147,6 +149,18 @@ input[type=submit] {
 }
 .mt10 {
 	margin-top: 10px;
+}
+.mt15 {
+	margin-top: 15px;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.mt20 {
+	margin-top: 20px;
+}
+.ml5 {
+	margin-left: 5px;
 }
 .ml10 {
 	margin-left: 10px;
@@ -222,6 +236,13 @@ input[type=submit] {
 /* border style */
 .bd1s969696 {
   border: #969696 1px solid;
+}
+/* tab 切换 样式 */
+.switch-blocks li {
+  display: none;
+}
+.switch-blocks li.current {
+  display: block;
 }
 /* }}} */
 /* view style {{{ */
@@ -377,7 +398,6 @@ input[type=submit] {
 /* }}} */
 /* index css {{{ */
 .new-links {
-  margin: 0 auto;
   border: #c8c8c8 1px solid;
   border-top: none;
 }
@@ -407,7 +427,7 @@ input[type=submit] {
 .new-links-blocks dl {
   *margin-top: -20px;
 }
-.new-links-blocks dd {
+.new-links-blocks dl dd {
   height: 131px;
   margin-top: 10px;
   padding: 0 23px;
@@ -419,12 +439,6 @@ input[type=submit] {
   line-height: 20px;
   padding-top: 5px;
 }
-.new-links-blocks li {
-  display: none;
-}
-.new-links-blocks li.current {
-  display: block;
-}
 .new-links-blocks li.new-links-two {
   padding-bottom: 30px;
 }
@@ -434,5 +448,12 @@ input[type=submit] {
 }
 .new-links-blocks li.new-links-three dd {
   padding: 0 34px;
+}
+.products-grid li,
+.notice_list li {
+  display: block;
+}
+.new-hj-list {
+  border: 0;
 }
 /* }}} */

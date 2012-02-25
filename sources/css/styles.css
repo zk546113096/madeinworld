@@ -347,10 +347,8 @@ input.input-text, textarea {
 select {
 	padding: 1px;
 	width: auto;
-	height;
-	19px;
-	line-height;
-	19px;
+	height: 19px;
+	line-height: 19px;
 }
 select option {
 	padding-right: 10px;
@@ -1454,8 +1452,8 @@ tr.summary-details-excluded {
 	color: #898888
 }
 .search_form #search_mini_form .form-search input {
-	width: 240px;
-	padding: 3px 8px 2px 8px;
+	width: 230px;
+	padding: 3px 2px 2px 8px;
 }
 #occasion {
 	margin: 0 10px;
@@ -2220,13 +2218,12 @@ tr.summary-details-excluded {
 	margin: 0 0 10px;
 }
 .products-grid .product-name a {
-	margin: 0 0 5px;
 	font-weight: normal;
 	font-size: 12px;
 	text-align: center;
 	display: inline-block;
-	line-height: 15px;
-	height: 15px;
+	line-height: 14px;
+	height: 14px;
 	overflow: hidden;
 	text-align: center;
 	width: 185px
@@ -2283,8 +2280,10 @@ tr.summary-details-excluded {
 }
 .products-grid .price-box {
 	margin: 0;
-	color: #880b0b;
-	text-align: center
+  padding-left: 25px;
+}
+.price-box table {
+  width: 125px;
 }
 .products-grid .availability {
 	line-height: 21px;
@@ -4024,8 +4023,6 @@ button.submit_btn span, button.submit_btn span span, .buttons-set button.submit_
 .warn {
 	text-align: center;
 	color: #880b0b;
-	margin-top: 36px;
-	margin-bottom: 20px;
 }
 .ls_bottom {
 	background-color: #1d1d1d;
@@ -4089,7 +4086,12 @@ button.submit_btn span, button.submit_btn span span, .buttons-set button.submit_
 }
 .copy {
 	float: right;
+  color: #7d7d7d;
 }
+.copy a {
+  color: #7d7d7d;
+}
+
 /* ======================================================================================= */
 /* Clears ================================================================================ */
 .clearer:after, .header-container:after, .header-container .top-container:after, .header:after, .header .quick-access:after, #nav:after, .main:after, .footer:after, .footer-container .bottom-container:after, .col-main:after, .col2-set:after, .col3-set:after, .col4-set:after, .search-autocomplete li:after, .block .block-content:after, .block .actions:after, .block li.item:after, .block-poll li:after, .block-layered-nav .currently li:after, .page-title:after, .products-grid:after, .products-list li.item:after, .box-account .box-head:after, .dashboard .box .box-title:after, .box-reviews li.item:after, .box-tags li.item:after, .pager:after, .sorter:after, .ratings:after, .add-to-box:after, .add-to-cart:after, .product-essential:after, .product-collateral:after, .product-view .product-img-box .more-views ul:after, .product-view .product-shop .short-description:after, .product-view .box-description:after, .product-view .box-tags .form-add:after, .product-options .options-list li:after, .product-options-bottom:after, .product-review:after, .cart:after, .cart-collaterals:after, .cart .crosssell li.item:after, .opc .step-title:after, .checkout-progress:after, .multiple-checkout .place-order:after, .group-select li:after, .form-list li:after, .form-list .field:after, .buttons-set:after, .page-print .print-head:after, .advanced-search-summary:after, .gift-messages-form .item:after, .send-friend .form-list li p:after {
@@ -4104,7 +4106,8 @@ button.submit_btn span, button.submit_btn span span, .buttons-set button.submit_
 /* ======================================================================================= */
 .layout {
 	clear: both;
-	overflow: hidden
+	overflow: hidden;
+  background: #ffffff;
 }
 .cols_l {
 	float: left;
@@ -4113,9 +4116,8 @@ button.submit_btn span, button.submit_btn span span, .buttons-set button.submit_
 }
 .cols_r {
 	float: right;
-	width: 288px;
+	width: 287px;
 	overflow: hidden;
-	padding-top: 4px;
 }
 /*banner滑动*/
 .w848 #flashbox2 {
@@ -5174,12 +5176,14 @@ ul, li {
 }
 .hongjiu_list .products-grid li, .ganlanyou_list .products-grid li {
 	width: 168px;
-	text-align: center;
 	overflow: hidden;
-	height: 243px;
 	overflow: hidden;
-	padding-top: 25px;
+	padding-top: 21px;
 	margin-bottom: 0px;
+}
+.hongjiu_list .products-grid-two li {
+  padding-top: 3px;
+  _padding-top: 0px;
 }
 .hongjiu_list .products-grid li .title, .ganlanyou_list .products-grid li .title {
 	width: 148px;
@@ -5202,11 +5206,9 @@ ul, li {
 }
 .hongjiu_list .products-grid .product-name a, .ganlanyou_list .products-grid .product-name a {
 	overflow: hidden;
-	margin-bottom: 2px;
 }
 .hongjiu_list .homelist .products-grid {
 	width: 672px;
-	height: 268px;
 	overflow: hidden;
 	clear: both;
 	position: relative;
@@ -5231,8 +5233,7 @@ ul, li {
 }
 .hj_content {
 	background: transparent url(../images/big_bg.jpg) no-repeat 0 0;
-	width: 992px;
-	height: 549px;
+  height: 649px;
 }
 .jiankangyangsheng, .hongjiuwenhua {
 	float: left;
@@ -5332,11 +5333,6 @@ ul, li {
 	overflow: hidden;
 	margin: 0 auto;
 }
-.lifetitle {
-	text-align: center;
-	padding-top: 20px;
-	padding-bottom: 17px
-}
 .lifecontent {
 	height: 122px;
 	overflow: hidden;
@@ -5375,13 +5371,10 @@ ul, li {
 	margin-left: 132px;
 }
 .dingyu {
-	padding: 20px 0 35px 5px;
-	clear: both;
-	overflow: hidden
+  padding: 25px 45px 15px 45px;
+	overflow: hidden;
 }
 .dingyu #search_mini_form {
-	float: left;
-	width: 630px;
 	overflow: hidden
 }
 #newsletter-validate-detail .block-content label, #newsletter-validate-detail .block-content .input-box, #newsletter-validate-detail .block-content .actions {
@@ -5432,9 +5425,6 @@ ul, li {
 	padding-top: 5px;
 	margin-right: 10px
 }
-.block-subscribe {
-	float: left
-}
 .block-subscribe #newsletter-validate-detail .block-content .actions {
 	padding: 0;
 }
@@ -5450,14 +5440,21 @@ ul, li {
 	height: auto;
 	width: auto;
 }
-#search_mini_form select, #search_mini_form .stext {
+#search_mini_form select,
+#search_mini_form .stext {
 	color: #898888;
 	height: 21px;
-	line-height: 21px
+	line-height: 21px;
+  margin-right: 8px;
+}
+#search_mini_form input {
+  color: #898888;
 }
 #newsletter {
+  color: #898888;
 	width: 192px;
-	height: 15px;
+	height: 21px;
+  *height: 15px;
 	line-height: 15px;
 	margin-right: 3px !important;
 	margin-right: 5px
@@ -7742,7 +7739,7 @@ ul, li {
 }
 .piclist {
 	margin-top: 15px;
-	width: 680px;
+	width: 690px;
 	clear: both;
 	overflow: hidden
 }
@@ -7750,7 +7747,7 @@ ul, li {
 	float: left
 }
 .piclist ul li.two {
-	margin: 0 13px;
+	margin: 0 15px;
 }
 #flashbox2 ul li, .r_tab_title ul li {
 	float: left
@@ -7759,48 +7756,30 @@ ul, li {
 	clear: both;
 	overflow: hidden
 }
+.r_tab_title {
+  background: url('../images/index/r-tab-title-01.png') no-repeat;
+}
+.r_tab_title li {
+  width: 142px;
+  height: 33px;
+  line-height: 33px;
+}
+.r_tab_title li.current {
+  color: #8a0e0e;
+  cursor: pointer;
+}
 .r_tab_list {
 	width: 279px;
 }
-.r_tab_title ul li {
-	float: left;
-	cursor: pointer;
-	font-size: 14px;
-	color: #3686868;
-	background-color: #f6f6f6;
-	width: 141px;
-	height: 31px;
-	line-height: 31px;
-	text-align: center;
-	border: 1px solid #dbdad8;
-	display: inline-block;
-}
-.r_tab_title ul li#tb_1 {
-	width: 142px;
-	border-right: 0px
-}
-.r_tab_title ul li.tm1 {
-	color: #8a0e0e;
-	font-weight: bold;
-	background-color: #fff;
-	border-left: 1px solid #dbdad8;
-	border-top: 1px solid #a17605;
-	border-right: 1px solid #dbdad8;
-	border-bottom: 0px solid #dbdad8;
-	display: inline-block;
-}
 .r_tab_list {
-	border: 1px solid #dbdad8;
-	border-top: 0px;
 	display: inline-block;
-	width: 280px;
-	height: 155px;
-	padding: 5px 2px 3px;
+  padding: 7px 3px 3px 3px;
 }
 .r_tab {
-	height: 205px;
+  height: 197px;
 	clear: both;
 	overflow: hidden;
+  border: #dbdad8 1px solid;
 }
 .free_shipping, .fl {
 	margin-bottom: 15px;
@@ -8870,7 +8849,7 @@ div.checkoutcontainer div.input-postcode .input-text {
 	clear: both;
 }
 
-.post-list{
+.post-list {
     float: left !important;
     border: 1px solid #ddd;
 }
@@ -8881,15 +8860,14 @@ div.checkoutcontainer div.input-postcode .input-text {
     padding: 10px 25px;
     width: 728px;
 }
-
-.col-main .post-list ul li h2,.col-main .post-list ul li .on{
+.col-main .post-list ul li h2,.col-main .post-list ul li .on {
     padding-bottom:10px;
 }
-.col-main .post-list ul li{
+.col-main .post-list ul li {
     border-bottom: 1px dashed #dcdcdc;
     margin-bottom: 10px;
 }
-.col-main .post-list ul li .on{
+.col-main .post-list ul li .on {
     border-bottom: 2px solid #E7E7E7;
     color: #808080;
     font-size: 12px;
@@ -8899,12 +8877,12 @@ div.checkoutcontainer div.input-postcode .input-text {
     font-size: 12px;
     padding-left:8px
 }
-.col-main .post-list ul li .on .read-more-right{
+.col-main .post-list ul li .on .read-more-right {
     font-size: 12px;
     color:#84182f;
     padding-left: 390px;
 }
-.col-main .post-list ul li .details{
+.col-main .post-list ul li .details {
     padding-bottom:10px
     height: 24px;
     line-height: 24px;
@@ -8915,18 +8893,18 @@ div.checkoutcontainer div.input-postcode .input-text {
 .col-main .post-list ul li .details a{
     padding: 0 15px;
 }
-.col-main .post-list ul li .details a:hover{
+.col-main .post-list ul li .details a:hover {
     color:#84182f;
     text-decoration: underline;
     
 }
-.col-main .post-list ul li .entry{
+.col-main .post-list ul li .entry {
     line-height: 21px;
     padding-top: 8px;
     color:#444444;
     font-size:12px
 }
-.col-main .post-list ul li .entry .read-more{
+.col-main .post-list ul li .entry .read-more {
     display:none;
 }
 .col-main .post-list ul li .entry li{
@@ -8937,26 +8915,25 @@ div.checkoutcontainer div.input-postcode .input-text {
     font-size:15px;
     font-weight:bold;
 }
-.sidebar .wp-sidebar{
+.sidebar .wp-sidebar {
     float: right;
     overflow: hidden;
     width: 190px;
 }  
-.featured-image{
+.featured-image {
     padding-bottom:20px;
 }
-.block-content #blog-search-form .blog-search{
+.block-content #blog-search-form .blog-search {
    overflow: hidden; 
    height:38px;
    line-height:38px;
    display: block;
    clear: both;
 }
-.block-content #blog-search-form .blog-search .input-text{
+.block-content #blog-search-form .blog-search .input-text {
     float:left;
     margin-top: 10px;
 }
-.block-content #blog-search-form .blog-search .button{
+.block-content #blog-search-form .blog-search .button {
     float:right
 }
-                                            

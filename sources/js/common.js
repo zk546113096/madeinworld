@@ -1,15 +1,27 @@
 $(document).ready(function() {
+  var ScrolltoTop = jQuery("#toTop"); /* scroll top link {{{ */
+  jQuery(window).scroll(function() {
+    if (jQuery(window).scrollTop() == "0") {
+      jQuery(ScrolltoTop).fadeOut("slow")
+    } else {
+      jQuery(ScrolltoTop).fadeIn("slow")
+    }
+  });
+  jQuery(ScrolltoTop).click(function() {
+    jQuery('html, body').animate({
+      scrollTop: 0
+    },
+    700)
+  }); /* }}} */
   $.fn.toggleInputText = function() { /* toggle input {{{ */
     var v = $(this).val(); 
     if($(this).val() == "")
-      $(this).val(v).css({'color':'#ccc'});
+      $(this).val(v).css({'color':'#898888'});
     $(this).focus(function(){
-      console.log(v);
       $(this).val('').select().css({'color':'#000'});
     }).blur(function(){
-      console.log(v);
       if($(this).val()==""){
-         $(this).val(v).css({'color':'#ccc'});
+         $(this).val(v).css({'color':'#898888'});
       }
     });
   };/* }}} */
